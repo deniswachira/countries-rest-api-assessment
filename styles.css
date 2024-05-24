@@ -1,0 +1,116 @@
+
+:root {
+    --dark-blue-elements: hsl(209, 23%, 22%);
+    --very-dark-blue-background: hsl(207, 26%, 17%);
+    --very-dark-blue-text: hsl(200, 15%, 8%);
+    --dark-gray-input: hsl(0, 0%, 52%);
+    --very-light-gray-background: hsl(0, 0%, 98%);
+    --white-elements: hsl(0, 0%, 100%);
+}
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    background-color:var(--very-dark-blue-background);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+[data-theme="dark"] {
+    --background-color: var(--very-dark-blue-background);
+    --text-color: var(--white-elements);
+}
+
+[data-theme="light"] {
+    --background-color: var(--very-light-gray-background);
+    --text-color: var(--very-dark-blue-text);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: var(--dark-blue-elements);
+    color: var(--white-elements);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+#search-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+    color: var(--white-elements);
+}
+
+#search {
+    width: 40%;
+    padding: 1em;
+    border: 1px solid var(--dark-blue-elements);
+    border-radius: 5px;
+    background-color: var(--dark-blue-elements);
+}
+
+#region-filter {
+    width: 28%;
+    padding: 1em;
+    color: var(--white-elements);
+    border: 1px solid var(--dark-blue-elements);
+    border-radius: 5px;
+    background-color: var(--dark-blue-elements);
+}
+#region-filter option {
+   padding: 20px;
+}
+
+#countries-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1em;
+    padding: 1em;
+}
+
+.country-card {
+    background-color: vvar(--dark-blue-elements);
+    color: var(--white-elements);
+    text-align: start;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.country-card img {
+    max-width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+}
+
+.country-card h2 {
+    font-size: 16px;
+    margin: 0.5em 0;
+}
+
+.country-card p {
+    font-size: 14px;
+    margin: 0.2em 0;
+}
