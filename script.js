@@ -28,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>Region: ${country.region}</p>
         <p>Capital: ${country.capital}</p>
       `;
+            countryCard.addEventListener('click', () => {
+                window.location.href = `country.html?name=${country.name}`;
+            });
             countriesContainer.appendChild(countryCard);
         });
     };
