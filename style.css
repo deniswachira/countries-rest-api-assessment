@@ -136,3 +136,15 @@ h1 {
     font-size: 16px;
     margin: 0.5em 0;
 }
+.border-countries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.border-country {
+    padding: 0.5em 1em;
+    background-color: var(--white-elements);
+    border: 1px solid var(--dark-gray-input);
+    border-radius: 5px;
+    cursor: pointer;
+}

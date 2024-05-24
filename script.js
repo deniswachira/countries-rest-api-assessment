@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
     const countriesContainer = document.getElementById('countries-container');
     const searchInput = document.getElementById('search');
     const regionFilter = document.getElementById('region-filter');
@@ -62,7 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Theme toggle
-    themeToggleBtn.addEventListener('click', () => {
+    themeToggleButton.addEventListener('click', () => {
+        // alert("hello")
+        body.classList.toggle("dark");
+        if (body.classList.contains("dark")) {
+            themeToggleButton.textContent = 'Light Mode 🌟';
+        } else {
+            themeToggleButton.textContent = "Dark Mode 🌙";
+        }
+
         const currentTheme = document.body.dataset.theme;
         document.body.dataset.theme = currentTheme === 'dark' ? 'light' : 'dark';
     });

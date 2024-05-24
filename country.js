@@ -20,18 +20,37 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Display country details
-    const displayCountryDetails = (country) => {
+    const displayCountryDetails = async (country) => {
+        const borderNames = await getBorderCountryNames(country.borders);
         countryDetails.innerHTML = `
-      <img src="${country.flags.svg}" alt="Flag of ${country.name}">
+      <img src="${country.flags.svg}" alt="Flag of ${country.name}" width= "200px" height="250px">
       <h2>${country.name}</h2>
+      <p><strong>Native Name:</strong> ${country.nativeName}</p>
       <p><strong>Population:</strong> ${country.population.toLocaleString()}</p>
       <p><strong>Region:</strong> ${country.region}</p>
       <p><strong>Subregion:</strong> ${country.subregion}</p>
       <p><strong>Capital:</strong> ${country.capital}</p>
+      <br/>
       <p><strong>Top Level Domain:</strong> ${country.topLevelDomain}</p>
       <p><strong>Currencies:</strong> ${Object.values(country.currencies).map(c => c.name).join(', ')}</p>
-      <p><strong>Languages:</strong> ${Object.values(country?.languages).join(', ')}</p>
+      <p><strong>Languages:</strong> ${Object.values(country?.languages).map(lg => lg.name).join(', ')}</p>
+
+        <h3>Border Countries:</h3>
+        <div class="border-countries">
+            ${borderNames?.map(border => `<button class="border-country" onclick="location.href = 'country.html?name=${border}'">${border}</button>`).join('')}
+        </div>
     `;
+    };
+
+    // Get border country names
+    const getBorderCountryNames = async (borders) => {
+        try {
+            const response = await fetch('data.json');
+            const countries = await response.json();
+            return countries.filter(country => borders.includes(country.alpha3Code)).map(country => country.name);
+        } catch (error) {
+            console.error('Error fetching border countries:', error);
+        }
     };
 
     // Back button

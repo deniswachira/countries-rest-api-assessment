@@ -10,7 +10,7 @@
 body {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 14px;
-    background-color:var(--very-dark-blue-background);
+    background:var(--very-dark-blue-background);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
     margin: 0;
@@ -24,13 +24,13 @@ body {
 }
 
 [data-theme="dark"] {
-    --background-color: var(--very-dark-blue-background);
-    --text-color: var(--white-elements);
+    background: var(--very-dark-blue-background);
+    color: var(--white-elements);
 }
 
 [data-theme="light"] {
-    --background-color: var(--very-light-gray-background);
-    --text-color: var(--very-dark-blue-text);
+    background: var(--very-light-gray-background);
+    color: var(--very-dark-blue-text);
 }
 
 header {
@@ -94,9 +94,11 @@ h1 {
     background: var(--dark-blue-elements);
     color: var(--white-elements);
     text-align: start;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, color 0.3s;
-    
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);   
+}
+.country-card:hover {
+    transition: all;
 }
 
 .country-card img {
