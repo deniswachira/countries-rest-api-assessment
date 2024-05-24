@@ -51,8 +51,12 @@ h1 {
 }
 
 #back-button {
-    background: none;
+    margin: 10px;
+    padding: 1em 1.5em;
+    background: var(--dark-blue-elements);
+    border-radius: 5px;
     border: none;
+    font-size: 30px;
     color: inherit;
     font: inherit;
     cursor: pointer;
@@ -98,7 +102,7 @@ h1 {
 }
 
 .country-card img {
-    max-width: 100%;
+    width: 50%;
     height: auto;
     border-radius: 5px;
 }

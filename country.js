@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <p><strong>Region:</strong> ${country.region}</p>
       <p><strong>Subregion:</strong> ${country.subregion}</p>
       <p><strong>Capital:</strong> ${country.capital}</p>
-      <p><strong>Top Level Domain:</strong> ${country.tld}</p>
+      <p><strong>Top Level Domain:</strong> ${country.topLevelDomain}</p>
       <p><strong>Currencies:</strong> ${Object.values(country.currencies).map(c => c.name).join(', ')}</p>
-      <p><strong>Languages:</strong> ${Object.values(country.languages).join(', ')}</p>
+      <p><strong>Languages:</strong> ${Object.values(country?.languages).join(', ')}</p>
     `;
     };
 
